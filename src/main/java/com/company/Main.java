@@ -4,9 +4,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+
+
 public class Main {
 
     public static void main(String[] args) {
+
 	    Player player = new Player();
 
         System.out.println("Вы просыпаетесь от сильной головной боли... На затылке рана.");

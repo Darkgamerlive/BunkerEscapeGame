@@ -1,13 +1,17 @@
 package com.company;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class LocationTest {
-
+    public static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
     @org.junit.jupiter.api.Test
     void findNext() {
+        LOGGER.info("Начало работы программы");
         Item itemCupboard = new Item("Шкаф", "И отсюда все забрали", Moveable.STATIONARY);
         Item itemTable = new Item("Стол", "На столе пустые тарелки и емкости из вод воды", Moveable.STATIONARY);
         Inventory locationInventoryKitchen = new Inventory();
