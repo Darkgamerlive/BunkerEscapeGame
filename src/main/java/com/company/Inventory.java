@@ -20,11 +20,9 @@ public class Inventory {
             System.out.println("Инвентарь пуст");
         }
         for (int x = 0; x < items.size(); x++) {
-            System.out.printf("%d предмет: \n", x + 1);
-            System.out.println("название: " + items.get(x).getName());
-
+            System.out.printf("%d)", x + 1);
+            System.out.println(items.get(x).getName());
             System.out.println("описание: " + items.get(x).getDescription());
-            System.out.println("перемещаемость: " + items.get(x).getMoveable() + "\n");
         }
     }
 
