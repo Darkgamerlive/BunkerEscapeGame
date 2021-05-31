@@ -1,0 +1,32 @@
+package com.company;
+
+import java.util.HashMap;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class LocationTest {
+
+    @org.junit.jupiter.api.Test
+    void findNext() {
+        Item itemCupboard = new Item("Шкаф", "И отсюда все забрали", Moveable.STATIONARY);
+        Item itemTable = new Item("Стол", "На столе пустые тарелки и емкости из вод воды", Moveable.STATIONARY);
+        Inventory locationInventoryKitchen = new Inventory();
+        locationInventoryKitchen.add(itemCupboard);
+        locationInventoryKitchen.add(itemTable);
+        Location locationKitchen = new Location("Кухня", "Пустая кухня, здесь нечего искать", locationInventoryKitchen, new HashMap<>());
+
+        Item itemCrowbar = new Item("Ломик","Хмм... Может он мне поможет открыть сломанную дверь?", Moveable.MOBILE);
+        Item itemGenerator = new Item("Генератор", "Выключен, похоже его бак пуст", Moveable.STATIONARY);
+        Inventory locationInventoryGeneratorRoom = new Inventory();
+        locationInventoryGeneratorRoom.add(itemGenerator);
+        locationInventoryGeneratorRoom.add(itemCrowbar);
+        Location locationGeneratorRoom = new Location("Генераторная", "Здесь стоит генератор, здесь можно включить основное питание помещений",
+                locationInventoryGeneratorRoom, new HashMap<>());
+        locationGeneratorRoom.directions.put(Direction.NORTH, locationKitchen);
+        locationKitchen.directions.put(Direction.SOUTH, locationGeneratorRoom);
+
+        Location actual = locationKitchen.findNext("Юг");
+        Location expected = locationGeneratorRoom;
+        assertEquals(expected,actual);
+    }
+}
