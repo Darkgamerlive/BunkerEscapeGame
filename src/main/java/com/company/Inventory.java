@@ -37,7 +37,6 @@ public class Inventory {
                     item.setDescription("здесь пусто");
                     bufferItemIn = item.getItemIn();
                     item.setItemIn(null);
-                    return bufferItemIn;
                 }
             }
         }

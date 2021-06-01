@@ -188,7 +188,8 @@ public class Player {
                             if (itemSubject1.getMoveable().equals(Moveable.MOBILE)) {
                                 this.inventory.items.remove(itemSubject1);
                             }
-                        } else if (itemSubject2 != null) {
+                        }
+                        else if (itemSubject2 != null) {
                             if (itemSubject2.getMoveable().equals(Moveable.MOBILE)) {
                                 this.location.inventory.items.remove(itemSubject2);
                             }

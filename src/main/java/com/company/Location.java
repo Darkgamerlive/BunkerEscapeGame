@@ -66,7 +66,6 @@ public class Location {
             if (locationItem.equals(this.inventory.items.get(i).getName()) && this.inventory.items.get(i).getMoveable().equals(Moveable.MOBILE)) {
                 buffer = this.inventory.items.get(i);
                 this.inventory.remove(this.inventory.items.get(i));
-                return buffer;
             }
         }
         return buffer;
